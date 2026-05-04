@@ -6,15 +6,15 @@
 <title>Whittier Narrows Nature Center – Bird Guide</title>
 <style>
   :root {
-    --green:  #6b3f1e;
-    --green2: #a0522d;
-    --green3: #d4956a;
-    --cream:  #fdf6ee;
-    --card:   #fffbf7;
-    --text:   #2c1a0e;
-    --muted:  #8a6a52;
-    --border: #e8d5c0;
-    --shadow: 0 2px 12px rgba(107,63,30,.10);
+    --green:  #2d6a4f;
+    --green2: #40916c;
+    --green3: #74c69d;
+    --cream:  #f8f4ef;
+    --card:   #ffffff;
+    --text:   #2c2c2c;
+    --muted:  #6b7280;
+    --border: #e2e8e4;
+    --shadow: 0 2px 12px rgba(0,0,0,.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +27,7 @@
 
   /* ── Header ─────────────────────────────────────────────── */
   header {
-    background: linear-gradient(135deg, #3d1f0a 0%, #7a3b15 50%, #a0522d 100%);
+    background: linear-gradient(135deg, var(--green) 0%, var(--green2) 100%);
     color: #fff;
     padding: 32px 24px 24px;
     text-align: center;
@@ -64,7 +64,7 @@
     white-space: nowrap;
   }
   .seen-count {
-    color: #fcd080;
+    color: #a7f3d0;
     font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
@@ -126,14 +126,14 @@
   }
   /* Seen today highlight */
   .card.seen {
-    border-color: #c8860a;
-    box-shadow: 0 0 0 3px rgba(200,134,10,.25), var(--shadow);
+    border-color: #34d399;
+    box-shadow: 0 0 0 3px rgba(52,211,153,.25), var(--shadow);
   }
   .card.seen .card-img-wrap::after {
     content: "✓ Seen Today";
     position: absolute;
     bottom: 8px; right: 8px;
-    background: #c8860a;
+    background: #059669;
     color: #fff;
     font-size: 11px;
     font-weight: 700;
@@ -145,7 +145,7 @@
   /* ── Image area ──────────────────────────────────────────── */
   .card-img-wrap {
     width: 100%;
-    background: #f0e0cc;
+    background: #e8f0ec;
     position: relative;
     overflow: hidden;
   }
@@ -232,7 +232,7 @@
     padding: 3px 0;
     transition: color .15s;
   }
-  .seen-label:hover { color: #c8860a; }
+  .seen-label:hover { color: #059669; }
   .seen-label input[type="checkbox"] { display: none; }
   .seen-checkbox-box {
     width: 20px; height: 20px;
@@ -244,8 +244,8 @@
     flex-shrink: 0;
   }
   .seen-label input:checked + .seen-checkbox-box {
-    background: #c8860a;
-    border-color: #c8860a;
+    background: #059669;
+    border-color: #059669;
   }
   .seen-label input:checked + .seen-checkbox-box::after {
     content: "✓";
@@ -255,7 +255,7 @@
     line-height: 1;
   }
   .seen-label input:checked ~ .seen-text {
-    color: #c8860a;
+    color: #059669;
   }
 
   /* ── Info rows ───────────────────────────────────────────── */
@@ -290,7 +290,10 @@
     text-align: center; padding: 28px;
     color: var(--muted); font-size: 12px;
     border-top: 1px solid var(--border);
-    background: #fdf6ee;
+    background: #fff;
+  }
+
+  /* ── Empty state ─────────────────────────────────────────── */
   .empty-msg {
     grid-column: 1/-1; text-align: center;
     padding: 60px 20px; color: var(--muted); font-size: 16px;
@@ -305,7 +308,7 @@
   }
   .modal-overlay.active { display: flex; }
   .modal {
-    background: #fffbf7;
+    background: #fff;
     border-radius: 16px;
     padding: 32px 28px 24px;
     max-width: 360px; width: 90%;
